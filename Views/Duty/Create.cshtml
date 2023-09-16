@@ -1,0 +1,44 @@
+﻿@model Duty
+
+<div class="container pt-5">
+	<div class="row">
+		<div class="col-md-6">
+			<form asp-controller="Duty" asp-action="Create" method="post">
+				<div class="form-group">
+					<label asp-for="Name" class="form-label">Görev İsmi *</label>
+					<input asp-for="Name" type="text" class="form-control">
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Category" class="form-label">Kategori </label>
+					<input asp-for="Category" type="text" class="form-control">
+					<span asp-validation-for="Category" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="dutyDate" class="form-label">Task Başlangıç Tarihi * </label>
+					<input asp-for="dutyDate" type="date" class="form-control">
+					<span asp-validation-for="dutyDate" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="priorityLevel">Öncelik Durumu</label><br />
+					<input type="range" asp-for="priorityLevel" list="markers" />
+
+					<datalist id="markers">
+						<option value="0"></option>
+						<option value="25"></option>
+						<option value="50"></option>
+						<option value="75"></option>
+						<option value="100"></option>
+					</datalist>
+				</div>
+
+				
+
+				<div class="form-group pt-3">
+					<button type="submit" class="btn btn-warning"><i class="bi bi-save"></i>Kaydet</button>
+					<a href="/Duty/Index" class="btn btn-primary"><i class="bi bi-list"></i>Listele</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

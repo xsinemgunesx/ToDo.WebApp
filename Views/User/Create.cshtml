@@ -1,0 +1,35 @@
+﻿@model User
+<div class="container pt-5">
+	<div class="row">
+		<div class="col-md-6">
+			<form asp-controller="User" asp-action="Create" method="post" >
+
+				<div class="mb-3">
+					<label asp-for="Name" class="form-label">Kullanıcı İsim Soyisim *</label>
+					<input asp-for="Name" type="text" class="form-control">
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Email">Email adresi *</label>
+					<input type="email" asp-for="Email" class="form-control">
+					<small id="emailHelp" class="form-text text-muted">Email'ini kimseyle paylaşmayacağız.</small>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Password">Şifre</label>
+					<input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<label asp-for="DateOnly">Kullanıcı Katılım Tarihi*</label>
+					<input asp-for="DateOnly" type="date" class="form-control">
+				</div>
+
+				<div class="form-group pt-3">
+					<button type="submit" class="btn btn-warning"><i class="bi bi-save"></i>Kaydet</button>
+					<a href="/User/Index" class="btn btn-primary"><i class="bi bi-list"></i>Listele</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
